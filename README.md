@@ -30,15 +30,14 @@ Required packages if not using Debian Jessie:
 
 **Configuring the Raspberry Pi from First Install**
 
-1. Download and install the latest image of Raspbian Jessie from https://www.raspberrypi.org/downloads/raspbian/
+1. Download and install the latest image of NOOBS from [raspberrypi.org](https://www.raspberrypi.org/downloads/NOOBS/)
 
 2. Update settings in Raspberry Pi Configuration:
     - Open Raspberry Pi Configuration in the Menu or `sudo raspi-config`
-    - Expand Filesystem
-    - Disable Underscan if necessary
-    - Set Localization options **(especially timezone)**
+    - Set timezone and keyboard layout as needed
+    - Disable Overscan if necessary (Under Advanced Options)
     - Reboot
-    
+
 3. Download and install system updates:
     - `sudo apt-get update && sudo apt-get upgrade -y`
     - `sudo reboot`
@@ -107,7 +106,7 @@ NOTE: You might need to disable ModemManager as well, if you're using a differen
 2. Install requirements:
     - `sudo pip3 install -r ~/DeviceNanny/requirements.txt`
 
-2. Copy file config/DeviceNanny.ini.template:
+2. Copy file config/DeviceNanny.ini.template: // TODO Keep working here!
     - Paste and rename without .template extension
     - Add your database password
     - Add your Slack api key
@@ -136,7 +135,7 @@ NOTE: You might need to disable ModemManager as well, if you're using a differen
 
 2. Add Cron job (needs sudo):
     - `sudo crontab -e`
-    - If promted, choose your favorite text editor
+    - If prompted, choose your favorite text editor
     - Add `*/1 * * * * cd /YOUR/PATH/TO/DeviceNanny/ && ./nanny.py` to the end of the file
     - Save and exit
     
